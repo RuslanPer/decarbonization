@@ -590,7 +590,7 @@ a {
 .__select__label-za::after {
   content: url(https://www.dropbox.com/s/jl9f3g0xnjdy3qs/arrow.png?raw=1);
   position: absolute;
-  top: 14px;
+  top: 12px;
   left: 50px;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
