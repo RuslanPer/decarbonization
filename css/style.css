@@ -590,7 +590,7 @@ a {
 .__select__label-za::after {
   content: url(https://www.dropbox.com/s/jl9f3g0xnjdy3qs/arrow.png?raw=1);
   position: absolute;
-  top: 12px;
+  top: 11px;
   left: 50px;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
@@ -995,16 +995,23 @@ a {
 .video-item__btn-upvote:hover {
   background-color: #fff;
   border-color: #4B3CF9;
-  color: #4B3CF9;
 }
 
 .video-item__btn-upvote:hover svg {
   fill: #4B3CF9;
 }
 
+.video-item__btn-upvote:hover span {
+  color: #4B3CF9;
+}
+
 .video-item__btn-upvote.active {
   background-color: #fff;
   border-color: #4B3CF9;
+  color: #4B3CF9;
+}
+
+.video-item__btn-upvote.active span {
   color: #4B3CF9;
 }
 
