@@ -161,6 +161,8 @@ a {
   background-image: url(https://www.dropbox.com/s/ohbkb8vmcsp1v8p/download.png?raw=1);
   background-repeat: no-repeat;
   background-position: 14px 50%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .filters__btn-download-all:active {
@@ -1013,10 +1015,10 @@ a {
 .video-item__metrics {
   margin-top: 10px;
   padding: 13px 15px;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: end;
   justify-content: end;
+  display: -webkit-box;
+  -webkit-box-pack: end;
   border-top: 1px solid #C4C4C4;
 }
 
@@ -1084,11 +1086,11 @@ a {
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center;
-  padding-left: 15px;
   width: 75px;
-  background-image: url(https://www.dropbox.com/s/1fzdsducjispd4l/edit.png?raw=1);
-  background-repeat: no-repeat;
-  background-position: 10px 50%;
+}
+
+.project__btn img {
+  margin-right: 5px;
 }
 
 .project__settings {
@@ -1745,7 +1747,6 @@ a {
     font-weight: 500;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: hidden;
   }
 
   .my-links__tab.active {
