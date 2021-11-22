@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Project</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+    <body>
+
+        <!-- settings -->
+<div class="settings">
+    <div class="container">
+        <div class="settings__wrap">
+            <div class="settings__col project">
+                <div class="project__header">
+                    <h3 class="project__title">Project settings:</h3>
+                    <button class="project__btn btn-black">Edit</button>
+                </div>
+                <div class="project__settings project-settings">
+                    <div class="project-settings__col">
+                        <div class="project-settings__item">
+                            <div class="project-settings__icon">
+                                <img src="https://www.dropbox.com/s/p2mvujddeatwyge/deadline.png?raw=1" alt="Deadline" >
+                            </div>
+                            <span class="project-settings__title">Deadline:</span>
+                            <span data-deadline class="project-settings__value">23.06.2021</span>
+                        </div>
+                        <div class="project-settings__item">
+                            <div class="project-settings__icon">
+                                <img src="https://www.dropbox.com/s/e3vo45e0wi1owf2/slides.png?raw=1" alt="slides">
+                            </div>
+                            <span class="project-settings__title">Slides limit:</span>
+                            <span data-slidesLimit class="project-settings__value">15</span>
+                        </div>
+                    </div>
+                    <div class="project-settings__col">
+                        <div class="project-settings__item">
+                            <div class="project-settings__icon">
+                                <img src="https://www.dropbox.com/s/n55ub3e91c2p50p/video.png?raw=1" alt="video">
+                            </div>
+                            <span class="project-settings__title">Recorded videos:</span>
+                            <span data-recordedVideos class="project-settings__value">51</span>
+                        </div>
+                        <div class="project-settings__item">
+                            <div class="project-settings__icon">
+                                <img src="https://www.dropbox.com/s/mwzojqvzsfoppso/time.png?raw=1" alt="time">
+                            </div>
+                            <span class="project-settings__title">Time limit:</span>
+                            <span data-mainDurationMax class="project-settings__value">04:40</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="project__members project-members">
+                    <div class="project-members__icon">
+                        <img src="https://www.dropbox.com/s/86hgh1mggtr9rd6/members.png?raw=1" alt="members">
+                    </div>
+                    <span class="project-members__title">Members:</span>
+                    <span class="project-members__item">Alexey Alexeev</span>
+                    <span class="project-members__item">Lord K.</span>
+                    <span class="project-members__item">Lord M.</span>
+                    <span class="project-members__item">Alexey Alexeev</span>
+                    <span class="project-members__item">Lord K.</span>
+                </div>
+            </div>
+            <div class="settings__col my-links">
+                <h3 class="my-links__title">My Links:</h3>
+                <div class="my-links__tabs">
+                    <div class="my-links__tab" onclick="openLinks(event, 'Recording')" id="defaultLink">
+                        <img src="https://www.dropbox.com/s/96s9q3pw75r2ndw/recording.png?raw=1" alt="recording">
+                        <span>Recording Page</span>
+                    </div>
+                    <div class="my-links__tab" onclick="openLinks(event, 'Invite')">
+                        <img src="https://www.dropbox.com/s/og9cczos462ulpi/invite-black.png?raw=1" alt="invite">
+                        <span>Invite</span>
+                    </div>
+                    <div class="my-links__tab" onclick="openLinks(event, 'Share')">
+                        <img src="https://www.dropbox.com/s/xsoslkqpwmabc43/share.png?raw=1" alt="share">
+                        <span>Share</span>
+                    </div>
+                </div>
+                <div class="my-links__wrap">
+                    <div id="Recording" class="my-links__item my-links-item">
+                        <div class="my-links-item__text">
+                            <h4 class="my-links-item__title">Recording Page</h4>
+                            <p class="my-links-item__description">
+                                Use this page to record pitches. Anyone with the link can record.
+                            </p>
+                        </div>
+                        <button data-copy-link class="btn-blue my-links-item__btn btn-copy-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="24" height="24" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+                            Copy link
+                        </button>
+                    </div>
+                    <div id="Invite" class="my-links__item my-links-item">
+                        <div class="my-links-item__text">
+                            <h4 class="my-links-item__title">Invite collaborators</h4>
+                            <p class="my-links-item__description">
+                                Invite collaborators to your project as Editors or Viewers with privileged access.
+                            </p>
+                        </div>
+                        
+                        <button class="btn-black my-links-item__btn btn-invite">
+                            <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 5.94106H5V2.93482H3V5.94106H0V7.94522H3V10.9515H5V7.94522H8V5.94106ZM18 6.94314C19.66 6.94314 20.99 5.60036 20.99 3.9369C20.99 2.27345 19.66 0.930664 18 0.930664C17.68 0.930664 17.37 0.980768 17.09 1.07096C17.66 1.88264 17.99 2.86468 17.99 3.9369C17.99 5.00913 17.65 5.98115 17.09 6.80285C17.37 6.89304 17.68 6.94314 18 6.94314ZM13 6.94314C14.66 6.94314 15.99 5.60036 15.99 3.9369C15.99 2.27345 14.66 0.930664 13 0.930664C11.34 0.930664 10 2.27345 10 3.9369C10 5.60036 11.34 6.94314 13 6.94314ZM19.62 9.10764C20.45 9.83915 21 10.7711 21 11.9535V13.9577H24V11.9535C24 10.4103 21.63 9.45836 19.62 9.10764ZM13 8.9473C11 8.9473 7 9.94938 7 11.9535V13.9577H19V11.9535C19 9.94938 15 8.9473 13 8.9473Z" fill="white"/>
+                            </svg>
+                            Invite
+                        </button>
+                    </div>
+                    <div id="Share" class="my-links__item my-links-item">
+                        <div class="my-links-item__text">
+                            <h4 class="my-links-item__title">Share</h4>
+                            <p class="my-links-item__description">
+                                Anyone with the link can access your project's public page. Guests can watch videos and press likes.
+                            </p>
+                        </div>
+                        <button data-copy-link class="btn-black my-links-item__btn btn-share">
+                            <svg width="14px" height="18px" fill="white" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 525.152 525.152"
+                                style="enable-background:new 0 0 525.152 525.152;" xml:space="preserve">
+                                <g>
+                                    <path d="M420.735,371.217c-20.021,0-37.942,7.855-51.596,20.24L181.112,282.094c1.357-6.061,2.407-12.166,2.407-18.468
+                                        c0-6.302-1.072-12.385-2.407-18.468l185.904-108.335c14.179,13.129,32.931,21.334,53.719,21.334
+                                        c43.828,0,79.145-35.251,79.145-79.079C499.88,35.338,464.541,0,420.735,0c-43.741,0-79.079,35.338-79.079,79.057
+                                        c0,6.389,1.072,12.385,2.407,18.468L158.158,205.947c-14.201-13.194-32.931-21.378-53.741-21.378
+                                        c-43.828,0-79.145,35.317-79.145,79.057s35.317,79.079,79.145,79.079c20.787,0,39.54-8.206,53.719-21.334l187.698,109.604
+                                        c-1.291,5.58-2.101,11.4-2.101,17.199c0,42.45,34.594,76.979,76.979,76.979c42.428,0,77.044-34.507,77.044-76.979
+                                        S463.163,371.217,420.735,371.217z" />
+                            </svg>
+                            Share
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="link-copied">Link copied</div>
+    <div class="invite">
+        <div class="invite__close" onclick="closeInviteModal()">
+            <img src="https://www.dropbox.com/s/32nkx8rnu6dupgg/close.png?raw=1" alt="close">
+        </div>
+        <div class="invite__wrap">
+            <div class="invite__tabs tab">
+                <div class="invite__tab tablinks" 
+                    onclick="openInvite(event, 'Editor')"  
+                    id="defaultOpen">
+                    Invite Editor
+                </div>
+                <div class="invite__tab tablinks" onclick="openInvite(event, 'Viewer')">Invite Viewer</div>
+            </div>
+            <div id="Editor" class="invite__slide invite-slide tabcontent ">
+                <div class="invite-slide__content">
+                    <div class="invite-slide__text">
+                        <h4 class="invite-slide__title">Invite link for Editor:</h4>
+                        <p class="invite-slide__description">
+                            Anyone with the link can join your project as Editor
+                        </p>
+                    </div>
+                    <button data-copy-link class="invite-slide__btn btn-blue">
+                        Copy link
+                    </button>
+                </div>
+                <div class="invite-slide__note">
+                    <p>
+                        <span>Note:</span> Editors can change project settings, invite Viewers, upvote, download and delete videos.
+                    </p>
+                </div>
+            </div>
+            <div id="Viewer" class="invite__slide invite-slide tabcontent active">
+                <div class="invite-slide__content">
+                    <div class="invite-slide__text">
+                        <h4 class="invite-slide__title">Invite link for Viewer:</h4>
+                        <p class="invite-slide__description">
+                            Anyone with the link can join your project as Viewer
+                        </p>
+                    </div>
+                    <button data-copy-link class="invite-slide__btn btn-blue">
+                        Copy link
+                    </button>
+                </div>
+                <div class="invite-slide__note">
+                    <p>
+                        <span>Note:</span> Editors can change project settings, invite Viewers, upvote, download and delete videos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- Filters -->
+<section class="filters">
+    <div class="container">
+        <!-- Filters wrap -->
+        <div class="filters__flex-wrap">
+            <div class="filters__col">
+                <div class="filters__button-modal">
+                    <a data-modal class="filters__btn">
+                        <img src="https://www.dropbox.com/s/brqc53b6lso22hy/filters.png?raw=1" alt="filters">
+                    </a>
+                    <h3 data-modal class="filters__subtitle">Filters</h3>
+                </div>
+                <div class="filters__button-modal">
+                    
+                    <form>
+                        <div class="__select" data-state="">
+                            <div class="__select__title" data-default="Option 0">
+                                <div class="__select__title-img">
+                                    <img class="" src="https://www.dropbox.com/s/vi3sfv7l3pcmz53/sort.png?raw=1" alt="sort">
+                                </div>
+                                <span>Sort</span>
+                            </div>
+                            <div class="__select__content">
+                                <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect"
+                                    checked />
+                                <label for="singleSelect0" class="__select__label">Sort</label>
+                                <input id="singleSelect1" class="__select__input" type="radio" name="singleSelect" />
+                                <label for="singleSelect1" class="__select__label">Newest first</label>
+                                <input id="singleSelect2" class="__select__input" type="radio" name="singleSelect" />
+                                <label for="singleSelect2" class="__select__label">Latest first</label>
+                                <input id="singleSelect3" class="__select__input" type="radio" name="singleSelect" />
+                                <label for="singleSelect3" class="__select__label __select__label-az">A-Z</label>
+                                <input id="singleSelect4" class="__select__input" type="radio" name="singleSelect" />
+                                <label for="singleSelect4" class="__select__label __select__label-za">Z-A</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="filters__col">
+                <button class="filters__btn-download-all">Download all videos</button>
+            </div>
+        </div>
+        <!-- Selected filters -->
+        <div class="filters-selected">
+        </div>
+        <!-- Filters modal -->
+        <div class="filters-modal modal">
+            <div class="filters-modal__wrap">
+                <div data-close class="filters-modal__close">
+                    <img src="https://www.dropbox.com/s/32nkx8rnu6dupgg/close.png?raw=1" alt="close">
+                </div>
+                <h2 class="filters-modal__title">Filter:</h2>
+                <div class="filters-modal__menu filters-menu">
+                </div>
+                <button data-close class="filters-modal__btn btn-blue">Apply</button>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- Video List -->
+<section class="video-list">
+    <div class="container">
+        <div class="video-list__total">
+            <span>Total videos: <span data-totalVideos>32</span></span>
+        </div>
+        <div class="video-list__wrap">
+            <div class="video-list__item video-item">
+                <div class="video-item__more">
+                    <a class="video-item__more-img">
+                        <img src="https://www.dropbox.com/s/rbb590xim6oe5it/more.png?raw=1" alt="more">
+                    </a>
+                    <ul class="video-item__more-list">
+                        <li>
+                            <span>Delete</span>
+                            <img src="https://www.dropbox.com/s/bg3n9c68j03f3fd/delete.png?raw=1" alt="delete">
+                        </li>
+                    </ul>
+                </div>
+                <div class="video-item__video">
+                    <video src="" controls ></video>
+                </div>
+                <div class="video-item__description">
+                    <h3 class="video-item__title">Name of the project Name of the project Name of the project</h3>
+                    <p class="video-item__text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis distinctio blanditiis cumque sed explicabo veniam eaque unde sequi, quis delectus, ducimus vitae. 
+                    </p>
+                </div>
+                <div class="video-item__buttons">
+                    <div class="video-item__buttons-col">
+                        <a data-copy-link data-share class="video-item__btn btn-share">
+                            <img src="https://www.dropbox.com/s/xsoslkqpwmabc43/share.png?raw=1" alt="share">
+                        </a>
+                        <a data-download class="video-item__btn btn-download">
+                            <img src="https://www.dropbox.com/s/ohbkb8vmcsp1v8p/download.png?raw=1" alt="download">
+                        </a>
+                    </div>
+                    <div class="video-item__buttons-col">
+                        <button class="btn video-item__btn-upvote ">
+                            <svg width="18px" height="18px" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/><path d="M24,11.034a2.5,2.5,0,0,0-2.5-2.5H15.189a.25.25,0,0,1-.237-.328,8.684,8.684,0,0,0,.52-4.407c-.588-2.095-1.834-2.7-2.809-2.565A2,2,0,0,0,11,3.284C11,6.03,8.871,9.03,6.966,10.345a.5.5,0,0,0-.216.412V20.873a.5.5,0,0,0,.405.491c.357.069.681.135.987.2a17.309,17.309,0,0,0,4.108.471h6.5c1.957,0,2.25-1.1,2.25-1.75a2.24,2.24,0,0,0-.232-.994,2.248,2.248,0,0,0,1-3A2.252,2.252,0,0,0,23,14.284a2.226,2.226,0,0,0-.273-1.072A2.5,2.5,0,0,0,24,11.034Z"/><path d="M5.25,10.784a1,1,0,0,0-1-1H1a1,1,0,0,0-1,1v11a1,1,0,0,0,1,1H4.25a1,1,0,0,0,1-1Zm-1.5,9.25a.75.75,0,1,1-.75-.75A.75.75,0,0,1,3.75,20.034Z"/></svg>
+                            <span>
+                                Upvote (<span data-upvotes>13</span>)
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="video-item__metrics">
+                    <div class="video-item__metrics-item metrics-likes">
+                        <img src="https://www.dropbox.com/s/ztjdght13opyqkv/like.png?raw=1" alt="likes">
+                        <span data-likes>11</span>
+                    </div>
+                    <div class="video-item__metrics-item metrics-views">
+                        <img src="https://www.dropbox.com/s/e79f4j860tnpk56/views.png?raw=1" alt="views">
+                        <span data-views>12</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video-list__item video-item">
+                <div class="video-item__more">
+                    <a class="video-item__more-img">
+                        <img src="https://www.dropbox.com/s/rbb590xim6oe5it/more.png?raw=1" alt="more">
+                    </a>
+                    <ul class="video-item__more-list">
+                        <li>
+                            <span>Delete</span>
+                            <img src="https://www.dropbox.com/s/bg3n9c68j03f3fd/delete.png?raw=1" alt="delete">
+                        </li>
+                    </ul>
+                </div>
+                <div class="video-item__video">
+                    <video src="" controls ></video>
+                </div>
+                <div class="video-item__description">
+                    <h3 class="video-item__title">Name of the project Name of the project Name of the project</h3>
+                    <p class="video-item__text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis distinctio blanditiis cumque sed explicabo veniam eaque unde sequi, quis delectus, ducimus vitae. 
+                    </p>
+                </div>
+                <div class="video-item__buttons">
+                    <div class="video-item__buttons-col">
+                        <a data-copy-link data-share class="video-item__btn btn-share">
+                            <img src="https://www.dropbox.com/s/xsoslkqpwmabc43/share.png?raw=1" alt="share">
+                        </a>
+                        <a data-download class="video-item__btn btn-download">
+                            <img src="https://www.dropbox.com/s/ohbkb8vmcsp1v8p/download.png?raw=1" alt="download">
+                        </a>
+                    </div>
+                    <div class="video-item__buttons-col">
+                        <button class="btn video-item__btn-upvote ">
+                            <svg width="18px" height="18px" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/><path d="M24,11.034a2.5,2.5,0,0,0-2.5-2.5H15.189a.25.25,0,0,1-.237-.328,8.684,8.684,0,0,0,.52-4.407c-.588-2.095-1.834-2.7-2.809-2.565A2,2,0,0,0,11,3.284C11,6.03,8.871,9.03,6.966,10.345a.5.5,0,0,0-.216.412V20.873a.5.5,0,0,0,.405.491c.357.069.681.135.987.2a17.309,17.309,0,0,0,4.108.471h6.5c1.957,0,2.25-1.1,2.25-1.75a2.24,2.24,0,0,0-.232-.994,2.248,2.248,0,0,0,1-3A2.252,2.252,0,0,0,23,14.284a2.226,2.226,0,0,0-.273-1.072A2.5,2.5,0,0,0,24,11.034Z"/><path d="M5.25,10.784a1,1,0,0,0-1-1H1a1,1,0,0,0-1,1v11a1,1,0,0,0,1,1H4.25a1,1,0,0,0,1-1Zm-1.5,9.25a.75.75,0,1,1-.75-.75A.75.75,0,0,1,3.75,20.034Z"/></svg>
+                            <span>
+                                Upvote (<span data-upvotes>13</span>)
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="video-item__metrics">
+                    <div class="video-item__metrics-item metrics-likes">
+                        <img src="https://www.dropbox.com/s/ztjdght13opyqkv/like.png?raw=1" alt="likes">
+                        <span data-likes>11</span>
+                    </div>
+                    <div class="video-item__metrics-item metrics-views">
+                        <img src="https://www.dropbox.com/s/e79f4j860tnpk56/views.png?raw=1" alt="views">
+                        <span data-views>12</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video-list__item video-item">
+                <div class="video-item__more">
+                    <a class="video-item__more-img">
+                        <img src="https://www.dropbox.com/s/rbb590xim6oe5it/more.png?raw=1" alt="more">
+                    </a>
+                    <ul class="video-item__more-list">
+                        <li>
+                            <span>Delete</span>
+                            <img src="https://www.dropbox.com/s/bg3n9c68j03f3fd/delete.png?raw=1" alt="delete">
+                        </li>
+                    </ul>
+                </div>
+                <div class="video-item__video">
+                    <video src="" controls ></video>
+                </div>
+                <div class="video-item__description">
+                    <h3 class="video-item__title">Name of the project Name of the project Name of the project</h3>
+                    <p class="video-item__text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis distinctio blanditiis cumque sed explicabo veniam eaque unde sequi, quis delectus, ducimus vitae. 
+                    </p>
+                </div>
+                <div class="video-item__buttons">
+                    <div class="video-item__buttons-col">
+                        <a data-copy-link data-share class="video-item__btn btn-share">
+                            <img src="https://www.dropbox.com/s/xsoslkqpwmabc43/share.png?raw=1" alt="share">
+                        </a>
+                        <a data-download class="video-item__btn btn-download">
+                            <img src="https://www.dropbox.com/s/ohbkb8vmcsp1v8p/download.png?raw=1" alt="download">
+                        </a>
+                    </div>
+                    <div class="video-item__buttons-col">
+                        <button class="btn video-item__btn-upvote ">
+                            <svg width="18px" height="18px" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/><path d="M24,11.034a2.5,2.5,0,0,0-2.5-2.5H15.189a.25.25,0,0,1-.237-.328,8.684,8.684,0,0,0,.52-4.407c-.588-2.095-1.834-2.7-2.809-2.565A2,2,0,0,0,11,3.284C11,6.03,8.871,9.03,6.966,10.345a.5.5,0,0,0-.216.412V20.873a.5.5,0,0,0,.405.491c.357.069.681.135.987.2a17.309,17.309,0,0,0,4.108.471h6.5c1.957,0,2.25-1.1,2.25-1.75a2.24,2.24,0,0,0-.232-.994,2.248,2.248,0,0,0,1-3A2.252,2.252,0,0,0,23,14.284a2.226,2.226,0,0,0-.273-1.072A2.5,2.5,0,0,0,24,11.034Z"/><path d="M5.25,10.784a1,1,0,0,0-1-1H1a1,1,0,0,0-1,1v11a1,1,0,0,0,1,1H4.25a1,1,0,0,0,1-1Zm-1.5,9.25a.75.75,0,1,1-.75-.75A.75.75,0,0,1,3.75,20.034Z"/></svg>
+                            <span>
+                                Upvote (<span data-upvotes>13</span>)
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="video-item__metrics">
+                    <div class="video-item__metrics-item metrics-likes">
+                        <img src="https://www.dropbox.com/s/ztjdght13opyqkv/like.png?raw=1" alt="likes">
+                        <span data-likes>11</span>
+                    </div>
+                    <div class="video-item__metrics-item metrics-views">
+                        <img src="https://www.dropbox.com/s/e79f4j860tnpk56/views.png?raw=1" alt="views">
+                        <span data-views>12</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video-list__item video-item">
+                <div class="video-item__more">
+                    <a class="video-item__more-img">
+                        <img src="https://www.dropbox.com/s/rbb590xim6oe5it/more.png?raw=1" alt="more">
+                    </a>
+                    <ul class="video-item__more-list">
+                        <li>
+                            <span>Delete</span>
+                            <img src="https://www.dropbox.com/s/bg3n9c68j03f3fd/delete.png?raw=1" alt="delete">
+                        </li>
+                    </ul>
+                </div>
+                <div class="video-item__video">
+                    <video src="" controls ></video>
+                </div>
+                <div class="video-item__description">
+                    <h3 class="video-item__title">Name of the project Name of the project Name of the project</h3>
+                    <p class="video-item__text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis distinctio blanditiis cumque sed explicabo veniam eaque unde sequi, quis delectus, ducimus vitae. 
+                    </p>
+                </div>
+                <div class="video-item__buttons">
+                    <div class="video-item__buttons-col">
+                        <a data-copy-link data-share class="video-item__btn btn-share">
+                            <img src="https://www.dropbox.com/s/xsoslkqpwmabc43/share.png?raw=1" alt="share">
+                        </a>
+                        <a data-download class="video-item__btn btn-download">
+                            <img src="https://www.dropbox.com/s/ohbkb8vmcsp1v8p/download.png?raw=1" alt="download">
+                        </a>
+                    </div>
+                    <div class="video-item__buttons-col">
+                        <button class="btn video-item__btn-upvote ">
+                            <svg width="18px" height="18px" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/><path d="M24,11.034a2.5,2.5,0,0,0-2.5-2.5H15.189a.25.25,0,0,1-.237-.328,8.684,8.684,0,0,0,.52-4.407c-.588-2.095-1.834-2.7-2.809-2.565A2,2,0,0,0,11,3.284C11,6.03,8.871,9.03,6.966,10.345a.5.5,0,0,0-.216.412V20.873a.5.5,0,0,0,.405.491c.357.069.681.135.987.2a17.309,17.309,0,0,0,4.108.471h6.5c1.957,0,2.25-1.1,2.25-1.75a2.24,2.24,0,0,0-.232-.994,2.248,2.248,0,0,0,1-3A2.252,2.252,0,0,0,23,14.284a2.226,2.226,0,0,0-.273-1.072A2.5,2.5,0,0,0,24,11.034Z"/><path d="M5.25,10.784a1,1,0,0,0-1-1H1a1,1,0,0,0-1,1v11a1,1,0,0,0,1,1H4.25a1,1,0,0,0,1-1Zm-1.5,9.25a.75.75,0,1,1-.75-.75A.75.75,0,0,1,3.75,20.034Z"/></svg>
+                            <span>
+                                Upvote (<span data-upvotes>13</span>)
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="video-item__metrics">
+                    <div class="video-item__metrics-item metrics-likes">
+                        <img src="https://www.dropbox.com/s/ztjdght13opyqkv/like.png?raw=1" alt="likes">
+                        <span data-likes>11</span>
+                    </div>
+                    <div class="video-item__metrics-item metrics-views">
+                        <img src="https://www.dropbox.com/s/e79f4j860tnpk56/views.png?raw=1" alt="views">
+                        <span data-views>12</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video-list__item video-item">
+                <div class="video-item__more">
+                    <a class="video-item__more-img">
+                        <img src="https://www.dropbox.com/s/rbb590xim6oe5it/more.png?raw=1" alt="more">
+                    </a>
+                    <ul class="video-item__more-list">
+                        <li>
+                            <span>Delete</span>
+                            <img src="https://www.dropbox.com/s/bg3n9c68j03f3fd/delete.png?raw=1" alt="delete">
+                        </li>
+                    </ul>
+                </div>
+                <div class="video-item__video">
+                    <video src="" controls ></video>
+                </div>
+                <div class="video-item__description">
+                    <h3 class="video-item__title">Name of the project Name of the project Name of the project</h3>
+                    <p class="video-item__text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis distinctio blanditiis cumque sed explicabo veniam eaque unde sequi, quis delectus, ducimus vitae. 
+                    </p>
+                </div>
+                <div class="video-item__buttons">
+                    <div class="video-item__buttons-col">
+                        <a data-copy-link data-share class="video-item__btn btn-share">
+                            <img src="https://www.dropbox.com/s/xsoslkqpwmabc43/share.png?raw=1" alt="share">
+                        </a>
+                        <a data-download class="video-item__btn btn-download">
+                            <img src="https://www.dropbox.com/s/ohbkb8vmcsp1v8p/download.png?raw=1" alt="download">
+                        </a>
+                    </div>
+                    <div class="video-item__buttons-col">
+                        <button class="btn video-item__btn-upvote ">
+                            <svg width="18px" height="18px" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/><path d="M24,11.034a2.5,2.5,0,0,0-2.5-2.5H15.189a.25.25,0,0,1-.237-.328,8.684,8.684,0,0,0,.52-4.407c-.588-2.095-1.834-2.7-2.809-2.565A2,2,0,0,0,11,3.284C11,6.03,8.871,9.03,6.966,10.345a.5.5,0,0,0-.216.412V20.873a.5.5,0,0,0,.405.491c.357.069.681.135.987.2a17.309,17.309,0,0,0,4.108.471h6.5c1.957,0,2.25-1.1,2.25-1.75a2.24,2.24,0,0,0-.232-.994,2.248,2.248,0,0,0,1-3A2.252,2.252,0,0,0,23,14.284a2.226,2.226,0,0,0-.273-1.072A2.5,2.5,0,0,0,24,11.034Z"/><path d="M5.25,10.784a1,1,0,0,0-1-1H1a1,1,0,0,0-1,1v11a1,1,0,0,0,1,1H4.25a1,1,0,0,0,1-1Zm-1.5,9.25a.75.75,0,1,1-.75-.75A.75.75,0,0,1,3.75,20.034Z"/></svg>
+                            <span>
+                                Upvote (<span data-upvotes>13</span>)
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="video-item__metrics">
+                    <div class="video-item__metrics-item metrics-likes">
+                        <img src="https://www.dropbox.com/s/ztjdght13opyqkv/like.png?raw=1" alt="likes">
+                        <span data-likes>11</span>
+                    </div>
+                    <div class="video-item__metrics-item metrics-views">
+                        <img src="https://www.dropbox.com/s/e79f4j860tnpk56/views.png?raw=1" alt="views">
+                        <span data-views>12</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video-list__item video-item">
+                <div class="video-item__more">
+                    <a class="video-item__more-img">
+                        <img src="https://www.dropbox.com/s/rbb590xim6oe5it/more.png?raw=1" alt="more">
+                    </a>
+                    <ul class="video-item__more-list">
+                        <li>
+                            <span>Delete</span>
+                            <img src="https://www.dropbox.com/s/bg3n9c68j03f3fd/delete.png?raw=1" alt="delete">
+                        </li>
+                    </ul>
+                </div>
+                <div class="video-item__video">
+                    <video src="" controls ></video>
+                </div>
+                <div class="video-item__description">
+                    <h3 class="video-item__title">Name of the project Name of the project Name of the project</h3>
+                    <p class="video-item__text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis distinctio blanditiis cumque sed explicabo veniam eaque unde sequi, quis delectus, ducimus vitae. 
+                    </p>
+                </div>
+                <div class="video-item__buttons">
+                    <div class="video-item__buttons-col">
+                        <a data-copy-link data-share class="video-item__btn btn-share">
+                            <img src="https://www.dropbox.com/s/xsoslkqpwmabc43/share.png?raw=1" alt="share">
+                        </a>
+                        <a data-download class="video-item__btn btn-download">
+                            <img src="https://www.dropbox.com/s/ohbkb8vmcsp1v8p/download.png?raw=1" alt="download">
+                        </a>
+                    </div>
+                    <div class="video-item__buttons-col">
+                        <button class="btn video-item__btn-upvote ">
+                            <svg width="18px" height="18px" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/><path d="M24,11.034a2.5,2.5,0,0,0-2.5-2.5H15.189a.25.25,0,0,1-.237-.328,8.684,8.684,0,0,0,.52-4.407c-.588-2.095-1.834-2.7-2.809-2.565A2,2,0,0,0,11,3.284C11,6.03,8.871,9.03,6.966,10.345a.5.5,0,0,0-.216.412V20.873a.5.5,0,0,0,.405.491c.357.069.681.135.987.2a17.309,17.309,0,0,0,4.108.471h6.5c1.957,0,2.25-1.1,2.25-1.75a2.24,2.24,0,0,0-.232-.994,2.248,2.248,0,0,0,1-3A2.252,2.252,0,0,0,23,14.284a2.226,2.226,0,0,0-.273-1.072A2.5,2.5,0,0,0,24,11.034Z"/><path d="M5.25,10.784a1,1,0,0,0-1-1H1a1,1,0,0,0-1,1v11a1,1,0,0,0,1,1H4.25a1,1,0,0,0,1-1Zm-1.5,9.25a.75.75,0,1,1-.75-.75A.75.75,0,0,1,3.75,20.034Z"/></svg>
+                            <span>
+                                Upvote (<span data-upvotes>13</span>)
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="video-item__metrics">
+                    <div class="video-item__metrics-item metrics-likes">
+                        <img src="https://www.dropbox.com/s/ztjdght13opyqkv/like.png?raw=1" alt="likes">
+                        <span data-likes>11</span>
+                    </div>
+                    <div class="video-item__metrics-item metrics-views">
+                        <img src="https://www.dropbox.com/s/e79f4j860tnpk56/views.png?raw=1" alt="views">
+                        <span data-views>12</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video-list__item video-item">
+                <div class="video-item__more">
+                    <a class="video-item__more-img">
+                        <img src="https://www.dropbox.com/s/rbb590xim6oe5it/more.png?raw=1" alt="more">
+                    </a>
+                    <ul class="video-item__more-list">
+                        <li>
+                            <span>Delete</span>
+                            <img src="https://www.dropbox.com/s/bg3n9c68j03f3fd/delete.png?raw=1" alt="delete">
+                        </li>
+                    </ul>
+                </div>
+                <div class="video-item__video">
+                    <video src="" controls ></video>
+                </div>
+                <div class="video-item__description">
+                    <h3 class="video-item__title">Name of the project Name of the project Name of the project</h3>
+                    <p class="video-item__text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis distinctio blanditiis cumque sed explicabo veniam eaque unde sequi, quis delectus, ducimus vitae. 
+                    </p>
+                </div>
+                <div class="video-item__buttons">
+                    <div class="video-item__buttons-col">
+                        <a data-copy-link data-share class="video-item__btn btn-share">
+                            <img src="https://www.dropbox.com/s/xsoslkqpwmabc43/share.png?raw=1" alt="share">
+                        </a>
+                        <a data-download class="video-item__btn btn-download">
+                            <img src="https://www.dropbox.com/s/ohbkb8vmcsp1v8p/download.png?raw=1" alt="download">
+                        </a>
+                    </div>
+                    <div class="video-item__buttons-col">
+                        <button class="btn video-item__btn-upvote ">
+                            <svg width="18px" height="18px" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/><path d="M24,11.034a2.5,2.5,0,0,0-2.5-2.5H15.189a.25.25,0,0,1-.237-.328,8.684,8.684,0,0,0,.52-4.407c-.588-2.095-1.834-2.7-2.809-2.565A2,2,0,0,0,11,3.284C11,6.03,8.871,9.03,6.966,10.345a.5.5,0,0,0-.216.412V20.873a.5.5,0,0,0,.405.491c.357.069.681.135.987.2a17.309,17.309,0,0,0,4.108.471h6.5c1.957,0,2.25-1.1,2.25-1.75a2.24,2.24,0,0,0-.232-.994,2.248,2.248,0,0,0,1-3A2.252,2.252,0,0,0,23,14.284a2.226,2.226,0,0,0-.273-1.072A2.5,2.5,0,0,0,24,11.034Z"/><path d="M5.25,10.784a1,1,0,0,0-1-1H1a1,1,0,0,0-1,1v11a1,1,0,0,0,1,1H4.25a1,1,0,0,0,1-1Zm-1.5,9.25a.75.75,0,1,1-.75-.75A.75.75,0,0,1,3.75,20.034Z"/></svg>
+                            <span>
+                                Upvote (<span data-upvotes>13</span>)
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="video-item__metrics">
+                    <div class="video-item__metrics-item metrics-likes">
+                        <img src="https://www.dropbox.com/s/ztjdght13opyqkv/like.png?raw=1" alt="likes">
+                        <span data-likes>11</span>
+                    </div>
+                    <div class="video-item__metrics-item metrics-views">
+                        <img src="https://www.dropbox.com/s/e79f4j860tnpk56/views.png?raw=1" alt="views">
+                        <span data-views>12</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video-list__item video-item">
+                <div class="video-item__more">
+                    <a class="video-item__more-img">
+                        <img src="https://www.dropbox.com/s/rbb590xim6oe5it/more.png?raw=1" alt="more">
+                    </a>
+                    <ul class="video-item__more-list">
+                        <li>
+                            <span>Delete</span>
+                            <img src="https://www.dropbox.com/s/bg3n9c68j03f3fd/delete.png?raw=1" alt="delete">
+                        </li>
+                    </ul>
+                </div>
+                <div class="video-item__video">
+                    <video src="" controls ></video>
+                </div>
+                <div class="video-item__description">
+                    <h3 class="video-item__title">Name of the project Name of the project Name of the project</h3>
+                    <p class="video-item__text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis distinctio blanditiis cumque sed explicabo veniam eaque unde sequi, quis delectus, ducimus vitae. 
+                    </p>
+                </div>
+                <div class="video-item__buttons">
+                    <div class="video-item__buttons-col">
+                        <a data-copy-link data-share class="video-item__btn btn-share">
+                            <img src="https://www.dropbox.com/s/xsoslkqpwmabc43/share.png?raw=1" alt="share">
+                        </a>
+                        <a data-download class="video-item__btn btn-download">
+                            <img src="https://www.dropbox.com/s/ohbkb8vmcsp1v8p/download.png?raw=1" alt="download">
+                        </a>
+                    </div>
+                    <div class="video-item__buttons-col">
+                        <button class="btn video-item__btn-upvote ">
+                            <svg width="18px" height="18px" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/><path d="M24,11.034a2.5,2.5,0,0,0-2.5-2.5H15.189a.25.25,0,0,1-.237-.328,8.684,8.684,0,0,0,.52-4.407c-.588-2.095-1.834-2.7-2.809-2.565A2,2,0,0,0,11,3.284C11,6.03,8.871,9.03,6.966,10.345a.5.5,0,0,0-.216.412V20.873a.5.5,0,0,0,.405.491c.357.069.681.135.987.2a17.309,17.309,0,0,0,4.108.471h6.5c1.957,0,2.25-1.1,2.25-1.75a2.24,2.24,0,0,0-.232-.994,2.248,2.248,0,0,0,1-3A2.252,2.252,0,0,0,23,14.284a2.226,2.226,0,0,0-.273-1.072A2.5,2.5,0,0,0,24,11.034Z"/><path d="M5.25,10.784a1,1,0,0,0-1-1H1a1,1,0,0,0-1,1v11a1,1,0,0,0,1,1H4.25a1,1,0,0,0,1-1Zm-1.5,9.25a.75.75,0,1,1-.75-.75A.75.75,0,0,1,3.75,20.034Z"/></svg>
+                            <span>
+                                Upvote (<span data-upvotes>13</span>)
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="video-item__metrics">
+                    <div class="video-item__metrics-item metrics-likes">
+                        <img src="https://www.dropbox.com/s/ztjdght13opyqkv/like.png?raw=1" alt="likes">
+                        <span data-likes>11</span>
+                    </div>
+                    <div class="video-item__metrics-item metrics-views">
+                        <img src="https://www.dropbox.com/s/e79f4j860tnpk56/views.png?raw=1" alt="views">
+                        <span data-views>12</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <script src="js/script.js"></script>        
+    </body>
+</html>
